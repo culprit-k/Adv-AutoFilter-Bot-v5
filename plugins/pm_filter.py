@@ -54,12 +54,12 @@ async def filter(client, message):
         if files:
             for file in files:
                 file_id = file.file_id
-                filename = f"[{get_size(file.file_size)}] {file.file_name}"
+                filename = f"🅼🅷 [{get_size(file.file_size)}] {file.file_name}"
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}")]
                     )
         else:
-            await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
+            await client.send_sticker(chat_id=message.from_user.id, sticker='CAACAgQAAxkBAAFTSl5hCjYfeFidZGIb2z6uF6wgrI33VQACJAoAArcyUFBKA2ByQDQYKCAE')
             return
 
         if not btn:
@@ -75,34 +75,34 @@ async def filter(client, message):
         else:
             buttons = btn
             buttons.append(
-                [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
+                [InlineKeyboardButton(text="● ɴᴏ ɴᴇxᴛ ᴘᴀɢᴇ ●",callback_data="pages")]
             )
             poster=None
             if API_KEY:
                 poster=await get_poster(search)
             if poster:
-                await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_photo(photo=poster, caption=f"<b>●🎪Tɪᴛʟᴇ :</b> <code>{search}</code>\n\n<b>●ᴄʜᴀɴɴᴇʟ ʟɪɴ𝐊s : [𝙅𝙊𝙄𝙉](https://telegram.dog/MovieHouse_Linkz)\n● ᴘᴏᴡᴇʀᴇᴅ ʙʏ : ᴍᴏᴠɪᴇ ʜᴏᴜsᴇ ᴇɴᴛᴇʀᴛᴀɪɴᴍᴇɴᴛ™</b>\n\n<b>ɪ𝙵 ʏᴏᴜ ᴅᴏ ɴᴏᴛ sᴇᴇ ᴛʜᴇ 𝙵ɪʟᴇ𝚂 ᴏ𝙵 ᴛʜɪ𝚂 ᴍᴏᴠɪᴇ ʏᴏᴜ ᴀ𝚂ᴋᴇᴅ 𝙵ᴏʀ . ʟᴏᴏᴋ ᴀᴛ ɴᴇ𝚇ᴛ ᴘᴀɢᴇ</b>", reply_markup=InlineKeyboardMarkup(buttons))
 
             else:
-                await message.reply_text(f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_text(f"<b>●🎪Tɪᴛʟᴇ :</b> <code>{search}</code>\n\n<b>●ᴄʜᴀɴɴᴇʟ ʟɪɴ𝐊s : [𝙅𝙊𝙄𝙉](https://telegram.dog/MovieHouse_Linkz)\n● ᴘᴏᴡᴇʀᴇᴅ ʙʏ : ᴍᴏᴠɪᴇ ʜᴏᴜsᴇ ᴇɴᴛᴇʀᴛᴀɪɴᴍᴇɴᴛ™</b>\n\n<b>ɪ𝙵 ʏᴏᴜ ᴅᴏ ɴᴏᴛ sᴇᴇ ᴛʜᴇ 𝙵ɪʟᴇ𝚂 ᴏ𝙵 ᴛʜɪ𝚂 ᴍᴏᴠɪᴇ ʏᴏᴜ ᴀ𝚂ᴋᴇᴅ 𝙵ᴏʀ . ʟᴏᴏᴋ ᴀᴛ ɴᴇ𝚇ᴛ ᴘᴀɢᴇ</b>", reply_markup=InlineKeyboardMarkup(buttons))
             return
 
         data = BUTTONS[keyword]
         buttons = data['buttons'][0].copy()
 
         buttons.append(
-            [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]
+            [InlineKeyboardButton(text="● ɢᴏ ᴛᴏ ɴᴇxᴛ ᴘᴀɢᴇ ●",callback_data=f"next_0_{keyword}")]
         )    
         buttons.append(
-            [InlineKeyboardButton(text=f"📃 Pages 1/{data['total']}",callback_data="pages")]
+            [InlineKeyboardButton(text=f"● ᴘᴀɢᴇ ɴᴜᴍʙᴇʀ ● 《 1 - {data['total']}》",callback_data="pages")]
         )
         poster=None
         if API_KEY:
             poster=await get_poster(search)
         if poster:
-            await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_photo(photo=poster, caption=f"<b>●🎪Tɪᴛʟᴇ :</b> <code>{search}</code>\n\n<b>●ᴄʜᴀɴɴᴇʟ ʟɪɴ𝐊s : [𝙅𝙊𝙄𝙉](https://telegram.dog/MovieHouse_Linkz)\n● ᴘᴏᴡᴇʀᴇᴅ ʙʏ : ᴍᴏᴠɪᴇ ʜᴏᴜsᴇ ᴇɴᴛᴇʀᴛᴀɪɴᴍᴇɴᴛ™</b>\n\n<b>ɪ𝙵 ʏᴏᴜ ᴅᴏ ɴᴏᴛ sᴇᴇ ᴛʜᴇ 𝙵ɪʟᴇ𝚂 ᴏ𝙵 ᴛʜɪ𝚂 ᴍᴏᴠɪᴇ ʏᴏᴜ ᴀ𝚂ᴋᴇᴅ 𝙵ᴏʀ . ʟᴏᴏᴋ ᴀᴛ ɴᴇ𝚇ᴛ ᴘᴀɢᴇ</b>", reply_markup=InlineKeyboardMarkup(buttons))
         else:
-            await message.reply_text(f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_text(f"<b>●🎪Tɪᴛʟᴇ :</b> <code>{search}</code>\n\n<b>●ᴄʜᴀɴɴᴇʟ ʟɪɴ𝐊s : [𝙅𝙊𝙄𝙉](https://telegram.dog/MovieHouse_Linkz)\n● ᴘᴏᴡᴇʀᴇᴅ ʙʏ : ᴍᴏᴠɪᴇ ʜᴏᴜsᴇ ᴇɴᴛᴇʀᴛᴀɪɴᴍᴇɴᴛ™</b>\n\n<b>ɪ𝙵 ʏᴏᴜ ᴅᴏ ɴᴏᴛ sᴇᴇ ᴛʜᴇ 𝙵ɪʟᴇ𝚂 ᴏ𝙵 ᴛʜɪ𝚂 ᴍᴏᴠɪᴇ ʏᴏᴜ ᴀ𝚂ᴋᴇᴅ 𝙵ᴏʀ . ʟᴏᴏᴋ ᴀᴛ ɴᴇ𝚇ᴛ ᴘᴀɢᴇ</b>", reply_markup=InlineKeyboardMarkup(buttons))
 
 @Client.on_message(filters.text & filters.group & filters.incoming & filters.chat(AUTH_GROUPS) if AUTH_GROUPS else filters.text & filters.group & filters.incoming)
 async def group(client, message):
@@ -120,7 +120,7 @@ async def group(client, message):
         if files:
             for file in files:
                 file_id = file.file_id
-                filename = f"[{get_size(file.file_size)}] {file.file_name}"
+                filename = f"🅼🅷 [{get_size(file.file_size)}] {file.file_name}"
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
                 )
@@ -139,31 +139,31 @@ async def group(client, message):
         else:
             buttons = btn
             buttons.append(
-                [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
+                [InlineKeyboardButton(text="● ɴᴏ ɴᴇxᴛ ᴘᴀɢᴇ ●",callback_data="pages")]
             )
             poster=None
             if API_KEY:
                 poster=await get_poster(search)
             if poster:
-                await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_photo(photo=poster, caption=f"<b>●🎪Tɪᴛʟᴇ :</b> <code>{search}</code>\n\n<b>●ᴄʜᴀɴɴᴇʟ ʟɪɴ𝐊s : [𝙅𝙊𝙄𝙉](https://telegram.dog/MovieHouse_Linkz)\n● ᴘᴏᴡᴇʀᴇᴅ ʙʏ : ᴍᴏᴠɪᴇ ʜᴏᴜsᴇ ᴇɴᴛᴇʀᴛᴀɪɴᴍᴇɴᴛ™</b>\n\n<b>ɪ𝙵 ʏᴏᴜ ᴅᴏ ɴᴏᴛ sᴇᴇ ᴛʜᴇ 𝙵ɪʟᴇ𝚂 ᴏ𝙵 ᴛʜɪ𝚂 ᴍᴏᴠɪᴇ ʏᴏᴜ ᴀ𝚂ᴋᴇᴅ 𝙵ᴏʀ . ʟᴏᴏᴋ ᴀᴛ ɴᴇ𝚇ᴛ ᴘᴀɢᴇ</b>", reply_markup=InlineKeyboardMarkup(buttons))
             else:
-                await message.reply_text(f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_text(f"<b>●🎪Tɪᴛʟᴇ :</b> <code>{search}</code>\n\n<b>●ᴄʜᴀɴɴᴇʟ ʟɪɴ𝐊s : [𝙅𝙊𝙄𝙉](https://telegram.dog/MovieHouse_Linkz)\n● ᴘᴏᴡᴇʀᴇᴅ ʙʏ : ᴍᴏᴠɪᴇ ʜᴏᴜsᴇ ᴇɴᴛᴇʀᴛᴀɪɴᴍᴇɴᴛ™</b>\n\n<b>ɪ𝙵 ʏᴏᴜ ᴅᴏ ɴᴏᴛ sᴇᴇ ᴛʜᴇ 𝙵ɪʟᴇ𝚂 ᴏ𝙵 ᴛʜɪ𝚂 ᴍᴏᴠɪᴇ ʏᴏᴜ ᴀ𝚂ᴋᴇᴅ 𝙵ᴏʀ . ʟᴏᴏᴋ ᴀᴛ ɴᴇ𝚇ᴛ ᴘᴀɢᴇ</b>", reply_markup=InlineKeyboardMarkup(buttons))
             return
 
         data = BUTTONS[keyword]
         buttons = data['buttons'][0].copy()
 
         buttons.append(
-            [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]
+            [InlineKeyboardButton(text="● ɢᴏ ᴛᴏ ɴᴇxᴛ ᴘᴀɢᴇ ●",callback_data=f"next_0_{keyword}")]
         )    
         buttons.append(
-            [InlineKeyboardButton(text=f"📃 Pages 1/{data['total']}",callback_data="pages")]
+            [InlineKeyboardButton(text=f"● ᴘᴀɢᴇ ɴᴜᴍʙᴇʀ ● 《1 - {data['total']}》",callback_data="pages")]
         )
         poster=None
         if API_KEY:
             poster=await get_poster(search)
         if poster:
-            await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_photo(photo=poster, caption=f"<b>●🎪Tɪᴛʟᴇ :</b> <code>{search}</code>\n\n<b>●ᴄʜᴀɴɴᴇʟ ʟɪɴ𝐊s : [𝙅𝙊𝙄𝙉](https://telegram.dog/MovieHouse_Linkz)\n● ᴘᴏᴡᴇʀᴇᴅ ʙʏ : ᴍᴏᴠɪᴇ ʜᴏᴜsᴇ ᴇɴᴛᴇʀᴛᴀɪɴᴍᴇɴᴛ™</b>\n\n<b>ɪ𝙵 ʏᴏᴜ ᴅᴏ ɴᴏᴛ sᴇᴇ ᴛʜᴇ 𝙵ɪʟᴇ𝚂 ᴏ𝙵 ᴛʜɪ𝚂 ᴍᴏᴠɪᴇ ʏᴏᴜ ᴀ𝚂ᴋᴇᴅ 𝙵ᴏʀ . ʟᴏᴏᴋ ᴀᴛ ɴᴇ𝚇ᴛ ᴘᴀɢᴇ</b>", reply_markup=InlineKeyboardMarkup(buttons))
         else:
             await message.reply_text(f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
 
