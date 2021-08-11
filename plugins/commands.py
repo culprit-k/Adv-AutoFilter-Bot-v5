@@ -64,9 +64,8 @@ async def start(bot, cmd):
                         f_caption=f_caption
                 if f_caption is None:
                     f_caption = f"{files.file_name}"
-                buttons = [
+                 buttons = [
                     [
-                        InlineKeyboardButton('Search again', switch_inline_query_current_chat=''),
                         InlineKeyboardButton('⭕ 𝐎𝐔𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊𝐒 ⭕', url='https://t.me/MovieHouse_Linkz')
                     ]
                     ]
@@ -91,7 +90,7 @@ async def start(bot, cmd):
                 ]
             )
         )
-    else:
+   else:
         await cmd.reply_text(
             START_MSG,
             parse_mode="Markdown",
@@ -103,11 +102,12 @@ async def start(bot, cmd):
                         InlineKeyboardButton("𝐆𝐑𝐎𝐔𝐏 - 𝟐 👥", url="https://t.me/Movie_House_Group_2")
                     ],
                     [
-                        InlineKeyboardButton("🖥️ 𝐍𝐄𝐖 𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 🖥️", url="https://t.me/NewDvdUpdatesKerala")
+                        InlineKeyboardButton("🖥️ 𝐍𝐄𝐖 𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 🖥️", url="https://t.me/New_dvd_updatez")
                     ]
                 ]
             )
         )
+
 
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
@@ -193,7 +193,7 @@ async def bot_info(bot, message):
     buttons = [
         [
             InlineKeyboardButton('⭕ 𝐎𝐔𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊𝐒 ⭕', url='https://t.me/MovieHouse_Linkz'),
-            InlineKeyboardButton('🖥️ 𝐍𝐄𝐖 𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 🖥️', url='https://t.me/NewDvdUpdatesKerala')
+            InlineKeyboardButton('🖥️ 𝐍𝐄𝐖 𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 🖥️', url='https://t.me/New_dvd_updatez')
         ]
         ]
     await message.reply(text="<b>Developer : <a href='https://t.me/abhijith876'>ABHIJITH</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/culprit-k/Adv-AutoFilter-Bot-v5'>Click here</a>\n⭕ 𝐎𝐔𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊𝐒 ⭕ : <a href='https://t.me/MovieHouse_Linkz'>ALL LINKS</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
