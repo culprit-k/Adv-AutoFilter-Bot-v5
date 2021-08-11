@@ -269,7 +269,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     reply_markup=InlineKeyboardMarkup(buttons)
                 )
                 return   
-            else: 
+           else:
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
