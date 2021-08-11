@@ -54,9 +54,9 @@ async def filter(client, message):
         if files:
             for file in files:
                 file_id = file.file_id
-                filename = f"🅼🅷 [{get_size(file.file_size)}] {file.file_name}"
+                filename = f"🅼🅷{get_size(file.file_size)} ‣ {file.file_name}"
                 btn.append(
-                    [InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}")]
+                    [InlineKeyboardButton(text=f"{filename}",callback_data=f"gtnero#{file_id}")]
                     )
         else:
             await client.send_sticker(chat_id=message.from_user.id, sticker='CAACAgQAAxkBAAFTSl5hCjYfeFidZGIb2z6uF6wgrI33VQACJAoAArcyUFBKA2ByQDQYKCAE')
@@ -120,7 +120,7 @@ async def group(client, message):
         if files:
             for file in files:
                 file_id = file.file_id
-                filename = f"🅼🅷 [{get_size(file.file_size)}] {file.file_name}"
+                filename = f"🅼🅷 {get_size(file.file_size)} ‣ {file.file_name}"
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
                 )
