@@ -200,17 +200,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
             try:
                 data = BUTTONS[keyword]
             except KeyError:
-                await query.answer("You are using this for one of my old message, please send the request again.",show_alert=True)
+                await query.answer("അല്ലയോ മഹാൻ താങ്കൾ ക്ലിക്ക് ചെയ്തത് പഴയ മെസ്സേജ് ആണ് വേണമെങ്കിൽ ഒന്നും കൂടെ റിക്വസ്റ്റ് ചെയ് 😉\n\nYou are using this for one of my old message, please send the request again",show_alert=True)
                 return
 
             if int(index) == int(data["total"]) - 2:
                 buttons = data['buttons'][int(index)+1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}")]
+                    [InlineKeyboardButton("● ɢᴏ ᴛᴏ ᴘʀᴇᴠɪᴏᴜs ᴘᴀɢᴇ ●", callback_data=f"back_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages")]
+                    [InlineKeyboardButton(f"● ᴘᴀɢᴇ ɴᴜᴍʙᴇʀ ●《{int(index)+2} - {data['total']}》", callback_data="pages")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -221,10 +221,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)+1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)+1}_{keyword}")]
+                    [InlineKeyboardButton("● ʙᴀᴄᴋ ᴘᴀɢᴇ ●", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("● ɴᴇxᴛ ᴘᴀɢᴇ ●", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages")]
+                    [InlineKeyboardButton(f"● ᴘᴀɢᴇ ɴᴜᴍʙᴇʀ ● 《{int(index)+2} - {data['total']}》", callback_data="pages")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -238,17 +238,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
             try:
                 data = BUTTONS[keyword]
             except KeyError:
-                await query.answer("You are using this for one of my old message, please send the request again.",show_alert=True)
+                await query.answer("അല്ലയോ മഹാൻ താങ്കൾ ക്ലിക്ക് ചെയ്തത് പഴയ മെസ്സേജ് ആണ് വേണമെങ്കിൽ ഒന്നും കൂടെ റിക്വസ്റ്റ് ചെയ് 😉\n\nYou are using this for one of my old message, please send the request again.",show_alert=True)
                 return
 
-            if int(index) == 1:
+             if int(index) == 1:
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
+                    [InlineKeyboardButton("● ɴᴇxᴛ ᴘᴀɢᴇ ●", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages")]
+                    [InlineKeyboardButton(f"● ᴘᴀɢᴇ ɴᴜᴍʙᴇʀ ● 《{int(index)} - {data['total']}》", callback_data="pages")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -259,10 +259,24 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
+                    [InlineKeyboardButton("● ʙᴀᴄᴋ ᴘᴀɢᴇ ●", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("● ɴᴇxᴛ ᴘᴀɢᴇ ●", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages")]
+                    [InlineKeyboardButton(f"● ᴘᴀɢᴇ ɴᴜᴍʙᴇʀ ● 《{int(index)} - {data['total']}》", callback_data="pages")]
+                )
+                
+                await query.edit_message_reply_markup( 
+                    reply_markup=InlineKeyboardMarkup(buttons)
+                )
+                return   
+            else:
+                buttons = data['buttons'][int(index)-1].copy()
+
+                buttons.append(
+                    [InlineKeyboardButton("● ʙᴀᴄᴋ ᴘᴀɢᴇ ●", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("● ɴᴇxᴛ ᴘᴀɢᴇ ●", callback_data=f"next_{int(index)-1}_{keyword}")]
+                )
+                buttons.append(
+                    [InlineKeyboardButton(f"● ᴘᴀɢᴇ ɴᴜᴍʙᴇʀ ● 《{int(index)} - {data['total']}》", callback_data="pages")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -294,13 +308,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         print(e)
                         f_caption=f_caption
                 if f_caption is None:
-                    f_caption = f"{files.file_name}"
-                buttons = [
-                    [
-                        InlineKeyboardButton('👥 𝐆𝐑𝐎𝐔𝐏 - 𝟏', url='https://t.me/Movie_House_1'),
-                        InlineKeyboardButton('𝐆𝐑𝐎𝐔𝐏 - 𝟐 👥', url='https://t.me/Movie_House_Group_2')
-                    ]
-                    ]
+                    f_caption = f"🅼🅷 {files.file_name}"
+                buttons = [[
+            InlineKeyboardButton('👥 𝐆𝐑𝐎𝐔𝐏 - 𝟏', url='https://t.me/Movie_House_1'),
+            InlineKeyboardButton('𝐆𝐑𝐎𝐔𝐏 - 𝟐 👥', url ='https://t.me/Movie_House_Group_2')
+        ],[
+            InlineKeyboardButton('⭕ 𝐎𝐔𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊𝐒 ⭕', url='https://t.me/MovieHouse_Linkz')
+        ],[
+            InlineKeyboardButton('🖥️ 𝐍𝐄𝐖 𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 🖥️', url='https://t.me/New_dvd_updatez')
+        ]]
                 
                 await query.answer()
                 await client.send_cached_media(
@@ -327,12 +343,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         f_caption=f_caption
                 if f_caption is None:
                     f_caption = f"{title}"
-                buttons = [
-                    [
-                        InlineKeyboardButton('👥 𝐆𝐑𝐎𝐔𝐏 - 𝟏', url='https://t.me/Movie_House_1'),
-                        InlineKeyboardButton('𝐆𝐑𝐎𝐔𝐏 - 𝟐 👥', url='https://t.me/Movie_House_Group_2')
-                    ]
-                    ]
+                buttons = [[
+            InlineKeyboardButton('👥 𝐆𝐑𝐎𝐔𝐏 - 𝟏', url='https://t.me/Movie_House_1'),
+            InlineKeyboardButton('𝐆𝐑𝐎𝐔𝐏 - 𝟐 👥', url ='https://t.me/Movie_House_Group_2')
+        ],[
+            InlineKeyboardButton('⭕ 𝐎𝐔𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊𝐒 ⭕', url='https://t.me/MovieHouse_Linkz')
+        ],[
+            InlineKeyboardButton('🖥️ 𝐍𝐄𝐖 𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 🖥️', url='https://t.me/New_dvd_updatez')
+        ]]
                 
                 await query.answer()
                 await client.send_cached_media(
