@@ -95,16 +95,17 @@ async def start(bot, cmd):
             photo='https://telegra.ph/file/6d1d397b05f7c69487388.jpg',
             caption="""𝑯𝒆𝒚 👋😍
 ഞാൻ ഒരു 𝘼𝙪𝙩𝙤 𝙁𝙞𝙡𝙩𝙚𝙧 ബോട്ട് ആണ്, എന്നെ നിങ്ങളുടെ ഗ്രൂപ്പിൽ ആഡ് ചെയ്യാൻ നോക്കി സമയം കളയണ്ട, എന്നെ 𝕄𝕆𝕍𝕀𝔼 ℍ𝕆𝕌𝕊𝔼 𝔼ℕ𝕋𝔼ℝ𝕋𝔸𝕀ℕ𝕄𝔼ℕ𝕋𝕊 ഗ്രൂപ്പിൽ മാത്രമേ ആഡ് ചെയ്യാൻ കഴിയൂ...!!!
-@Movie_House_Group_2 , @Movie_House_1""",
+ , @
+ """,
             parse_mode="Markdown",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("👥 𝐆𝐑𝐎𝐔𝐏 - 𝟏", url="https://t.me/Movie_House_1"),
-                        InlineKeyboardButton("𝐆𝐑𝐎𝐔𝐏 - 𝟐 👥", url="https://t.me/Movie_House_Group_2")
+                        InlineKeyboardButton("👥 𝐆𝐑𝐎𝐔𝐏 - 𝟏", url=""),
+                        InlineKeyboardButton("𝐆𝐑𝐎𝐔𝐏 - 𝟐 👥", url="")
                     ],
                     [
-                        InlineKeyboardButton("🖥️ 𝐍𝐄𝐖 𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 🖥️", url="https://t.me/New_dvd_updatez")
+                        InlineKeyboardButton("🖥️ 𝐍𝐄𝐖 𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 🖥️", url="")
                     ]
                 ]
             )
@@ -194,8 +195,8 @@ async def delete(bot, message):
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('⭕ 𝐎𝐔𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊𝐒 ⭕', url='https://t.me/MovieHouse_Linkz'),
-            InlineKeyboardButton('🖥️ 𝐍𝐄𝐖 𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 🖥️', url='https://t.me/New_dvd_updatez')
+            InlineKeyboardButton('⭕ 𝐎𝐔𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊𝐒 ⭕', url=''),
+            InlineKeyboardButton('🖥️ 𝐍𝐄𝐖 𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 🖥️', url='')
         ]
         ]
     await message.reply(text="<b>Developer : <a href='https://t.me/abhijith876'>ABHIJITH</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/culprit-k/Adv-AutoFilter-Bot-v5'>Click here</a>\n⭕ 𝐎𝐔𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊𝐒 ⭕ : <a href='https://t.me/MovieHouse_Linkz'>ALL LINKS</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
